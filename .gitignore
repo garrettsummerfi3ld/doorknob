@@ -61,4 +61,4 @@ target/
 .vscode
 
 # Logging
-log
+*.log
