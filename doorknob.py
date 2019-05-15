@@ -39,10 +39,19 @@ def create_dirs():
 
 # Checks and installs dependencies
 def check_dependencies():
-    if condition:
-        pass
+    
+    # Two arrays to compare the required dependencies to have the project to work
+    installedDependencies = ['']
+    requiredDependencies = ['']
+    
+    # Check the arrays for discrepancies
+    if requiredDependencies not in installedDependencies:
+        logging.error("Dependencies not installed!")
+        logging.info("Installing dependencies...")
+        return
     else:
-        pass
+        logging.info("Dependencies installed!")
+        return
 # Checks for the right OS platform
 def os_probe():
     logging.info("Checking OS...")
