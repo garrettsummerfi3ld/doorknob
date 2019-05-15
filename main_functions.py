@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Imports
-import gpiozero
+#import gpiozero
 
 def main():
     return
