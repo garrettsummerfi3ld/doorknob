@@ -37,6 +37,14 @@ def create_dirs():
     else:
         return
 
+def get_os():
+    logging.debug("==[ OS INFO ]==")
+    logging.debug("OS VERSION: " + osVersion)
+    logging.debug("OS RELEASE: " + osRelease)
+    logging.debug("OS VERSION: " + osVersion)
+    logging.debug("OS SYSTEM: " + osSystem)
+    logging.debug("==[ OS INFO ]==")
+
 # Checks and installs dependencies
 def check_dependencies():
     
@@ -72,25 +80,14 @@ def os_probe():
         # If system is supported
         if osPlatform in supportedPlatforms:
             logging.info("Detected OS is supported!")
-            logging.debug("==[ OS INFO ]==")
-            logging.debug("OS VERSION: " + osVersion)
-            logging.debug("OS RELEASE: " + osRelease)
-            logging.debug("OS VERSION: " + osVersion)
-            logging.debug("OS SYSTEM: " + osSystem)
-            logging.debug("==[ OS INFO ]==")
+            get_os()
             return
         
         # If system is not supported
         elif osPlatform in unsupportedPlatforms:
             warnFlag = 1
             logging.warning("Detected OS is **NOT** SUPPORTED, I AM NOT RESPONSIBLE FOR CATESTROPHIC FAILURE")
-            logging.debug("==[ OS INFO ]==")
-            logging.debug("OS VERSION: " + osVersion)
-            logging.debug("OS RELEASE: " + osRelease)
-            logging.debug("OS VERSION: " + osVersion)
-            logging.debug("OS SYSTEM: " + osSystem)
-            logging.debug("==[ OS INFO ]==")
-           
+            get_os()
             # Run through a check to see if user is okay with the script being broken
             while warnFlag == 1:
                 logging.warning("ARE YOU SURE YOU WANT TO CONTINUE? [Y/n]")
