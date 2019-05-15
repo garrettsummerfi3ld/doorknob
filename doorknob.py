@@ -3,16 +3,19 @@
 # Imports
 import logging
 import platform
+import subprocess
 import sys
 import os
-from gpiozero import LED, Button, Motor
+# from gpiozero import LED, Button, Motor
 from time import sleep
 
 # Vars
-motor = Motor(forward=4, backward=14)
-led = LED(17)
-button = Button(2)
+#motor = Motor(forward=4, backward=14)
+#led = LED(17)
+#button = Button(2)
 fileLocation = 'doorknob.log'
+version = subprocess.check_output(["git", "describe"]).strip()
+
 
 # Logging
 logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',datefmt='%Y-%m-%d %H:%M:%S',filename=fileLocation)
@@ -33,7 +36,7 @@ logging.getLogger('').addHandler(console)
 def create_dirs():
     if not os.path.exists('./log'):
         os.path.join(fileLocation)
-        logFile = open(fileLocation,"w")
+        logFile = open(fileLocation,"a")
     else:
         return
 
@@ -115,12 +118,12 @@ def main():
     print(" / _` |/ _ \\ / _ \\| '__| |/ / '_ \\ / _ \\| '_ \\")
     print("| (_| | (_) | (_) | |  |   <| | | | (_) | |_) |")
     print(" \\__,_|\\___/ \\___/|_|  |_|\\_\\_| |_|\\___/|_.__/")
-    print("by doorX // version 0.1.3 alpha")
+    print("by doorX // version " + version)
+    # Check OS
+    os_probe()
     # Setting up logs and other dependencies
     create_dirs()
     check_dependencies()
-    # Check OS
-    os_probe()
     try:
         testCondition = str(input("input a condition: "))
         if testCondition == 'yes':
