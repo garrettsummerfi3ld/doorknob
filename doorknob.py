@@ -37,6 +37,12 @@ def create_dirs():
     else:
         return
 
+# Checks and installs dependencies
+def check_dependencies():
+    if condition:
+        pass
+    else:
+        pass
 # Checks for the right OS platform
 def os_probe():
     logging.info("Checking OS...")
@@ -94,7 +100,7 @@ def os_probe():
                     logging.info("")
             return
     except:
-        logging.error("ERROR! CHECK STACKTRACE! LOGFILE IN")
+        logging.error("ERROR! CHECK STACKTRACE! LOGFILE IS LOCATED IN " + fileLocation)
 
 # main class
 def main():
@@ -106,6 +112,7 @@ def main():
     print("by doorX // version 0.1.3 alpha")
     # Setting up logs and other dependencies
     create_dirs()
+    check_dependencies()
     # Check OS
     os_probe()
     try:
