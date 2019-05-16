@@ -11,23 +11,8 @@ from time import sleep
 # Vars
 version = str(subprocess.check_output(['git', 'rev-parse', 'HEAD']),'utf-8')
 fileLocation = 'doorknob.log'
+initCode = 0
 
-# Checks and installs dependencies
-def check_dependencies():
-    logging.info("Checking installed dependencies...")
-    # Two arrays to compare the required dependencies to have the project to work
-    installedDependencies = ['']
-    requiredDependencies = [
-        '']
-    
-    # Check the arrays for discrepancies
-    if requiredDependencies not in installedDependencies:
-        logging.error("Dependencies not installed!")
-        logging.info("Installing dependencies...")
-        return
-    else:
-        logging.info("Dependencies installed!")
-        return
 # Checks for the right OS platform
 def os_probe():
     logging.info("Checking OS...")
@@ -45,12 +30,12 @@ def os_probe():
     osSystem = platform.system()
     osPlatform = platform.system()
     
-    logging.debug("==[ OS INFO ]==")
+    logging.debug("========== [ OS INFO ] ==========")
     logging.debug("OS VERSION: " + osVersion)
     logging.debug("OS RELEASE: " + osRelease)
     logging.debug("OS VERSION: " + osVersion)
     logging.debug("OS SYSTEM: " + osSystem)
-    logging.debug("==[ OS INFO ]==")
+    logging.debug("========== [ OS INFO ] ==========")
     # If system is supported
     if osPlatform in supportedPlatforms:
         logging.info("Detected OS is supported!")
@@ -59,28 +44,29 @@ def os_probe():
     # If system is not supported
     elif osPlatform in unsupportedPlatforms:
         warnFlag = 1
-        logging.warning("Detected OS is **NOT** SUPPORTED, I AM NOT RESPONSIBLE FOR CATESTROPHIC FAILURE")
         # Run through a check to see if user is okay with the script being broken
         while warnFlag == 1:
+            logging.warning("Detected OS is **NOT** SUPPORTED, I AM NOT RESPONSIBLE FOR CATESTROPHIC FAILURE")
             logging.warning("ARE YOU SURE YOU WANT TO CONTINUE? [Y/n]")
             confirmWarn = str(input(""))
             
             # Run script
             if confirmWarn == 'Y' or confirmWarn == 'y':
+                logging.info(confirmWarn)
                 logging.info("Continuing on...")
                 return
             
             # Stop script
             elif confirmWarn == 'N' or confirmWarn == 'n':
+                logging.info(confirmWarn)
                 logging.info("Closing application...")
                 quit(0)
             else:
-                logging.info(confirmWarn)
+                logging.error("INPUT NOT RECOGNIZED!")
         return
 
 # Main class
-def init():
-    init_complete = 0
+def setup():
     logging.info("Initializing...")
     logging.info("     _                  _                _")
     logging.info("  __| | ___   ___  _ __| | ___ __   ___ | |__")
@@ -90,10 +76,9 @@ def init():
     logging.info("by doorX // version " + version)
     # Check OS
     os_probe()
-    # Setting up logs and other dependencies
-    check_dependencies()
-    init_complete = 1
-    return init_complete
+
+    initCode = 1
+    return initCode
 
 if __name__ == '__main__':
-    init()
+    setup()

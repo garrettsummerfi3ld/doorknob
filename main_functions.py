@@ -4,7 +4,8 @@
 #import gpiozero
 
 def main():
-    return
+    logging.info("Starting main functions...")
+
 
 if __name__ == '__main__':
     main()

@@ -30,8 +30,8 @@ logging.getLogger('').addHandler(console)
 
 # main class
 def main():
-    init.init()
-    if init.init.init_complete == 1:
+    init.setup()
+    if init.initCode == 1:
         main_functions.main()
 
 if __name__ == "__main__":

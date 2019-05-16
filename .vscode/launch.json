@@ -5,6 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name":"Doorknob Main Script",
+            "type":"python",
+            "request":"launch",
+            "module":"doorknob"
+        },
+        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
