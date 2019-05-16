@@ -46,7 +46,7 @@ def os_probe():
         warnFlag = 1
         # Run through a check to see if user is okay with the script being broken
         while warnFlag == 1:
-            logging.warning("Detected OS is **NOT** SUPPORTED, I AM NOT RESPONSIBLE FOR CATESTROPHIC FAILURE")
+            logging.warning("Detected OS is **NOT** SUPPORTED, THE SCRIPT MAY NOT WORK")
             logging.warning("ARE YOU SURE YOU WANT TO CONTINUE? [Y/n]")
             confirmWarn = str(input(""))
             
