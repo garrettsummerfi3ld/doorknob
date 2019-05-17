@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 # Imports
+import logging
 import gpiozero
 import time
 import bottle
@@ -10,8 +11,9 @@ import bottle
 def index():
     return 'Nothing is here!'
 
+
 @route('/doorclose/:req')
-def close_door_req(close_rq = 0):
+def close_door_req(close_rq=0):
     if close_rq == '0':
         logging.info("No request is made!")
         logging.debug("REQUEST CODE: " + close_rq)
@@ -24,6 +26,7 @@ def close_door_req(close_rq = 0):
         logging.info("Door closed!")
         logging.debug("REQUEST CODE: " + close_rq)
         return 'Door closed!'
+
 
 def main():
     logging.info("Starting main functions...")
