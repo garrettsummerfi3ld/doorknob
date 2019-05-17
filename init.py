@@ -6,6 +6,7 @@ import platform
 import subprocess
 import sys
 import os
+import pip
 from time import sleep
 
 # Vars
@@ -76,6 +77,7 @@ def setup():
     logging.info("by doorX // version " + version)
     # Check OS
     os_probe()
+    check_dependencies()
 
     initCode = 1
     return initCode
