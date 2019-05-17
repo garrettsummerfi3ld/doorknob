@@ -5,7 +5,7 @@ import gpiozero
 import time
 import bottle
 
-# Handle HTTP rewuests
+# Handle HTTP requests
 @route('/')
 def index():
     return 'Nothing is here!'
