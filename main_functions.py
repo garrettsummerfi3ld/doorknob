@@ -3,7 +3,7 @@
 # Imports
 import logging
 import gpiozero
-import sleep
+import time
 import bottle
 
 # Vars
@@ -27,7 +27,7 @@ def close_door_req(close_rq=0):
     elif close_rq == '1':
         logging.info("Closing Door...")
         motor.forward()
-        sleep(5)
+        time.sleep(5)
         logging.info("Door closed!")
         logging.debug("REQUEST CODE: " + close_rq)
         return 'Door closed!'
