@@ -7,7 +7,7 @@ import time
 import flask
 
 # Vars
-motor = Motor(forward=4, backward=14)
+motor = gpiozero.Motor(forward=4, backward=14)
 
 # Handle HTTP requests
 @route('/')
