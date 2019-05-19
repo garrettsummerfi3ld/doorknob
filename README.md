@@ -6,8 +6,8 @@ Using a Raspberry Pi to control a door, using your voice
 
 * A Raspberry Pi with an internet connection
 * Python3
-* bottle
-* gpiozero
+* [bottle](https://ogma-dev.github.io/posts/simple-flask-webhook/)
+* [gpiozero](https://gpiozero.readthedocs.io/en/stable/index.html)
 
 ## Documentation
 
@@ -24,7 +24,7 @@ Using a Raspberry Pi to control a door, using your voice
 
 ### Logging
 
-All logging is captured by a file that is created the first time the script runs. This file is located in the project directory.
+All logging is captured by a file that is created the first time the script runs. This file is located in the project directory. File that is created is `doorknob.log`
 
 ## Troubleshooting
 
