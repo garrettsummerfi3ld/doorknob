@@ -1,6 +1,6 @@
 {
   "name": "doorknob",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Control your door with a Raspberry Pi and your voice",
   "main": "app.js",
   "scripts": {
