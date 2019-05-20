@@ -1,0 +1,39 @@
+{
+  "name": "doorknob",
+  "version": "0.0.1",
+  "description": "Control your door with a Raspberry Pi and your voice",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garrettsummerfi3ld/doorknob.git"
+  },
+  "keywords": [
+    "google",
+    "home",
+    "raspberry",
+    "pi",
+    "diy",
+    "door",
+    "node.js"
+  ],
+  "author": "Garrett Summerfield",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/garrettsummerfi3ld/doorknob/issues"
+  },
+  "homepage": "https://github.com/garrettsummerfi3ld/doorknob#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.14.0",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "python-shell": "^0.4.0"
+  },
+  "devDependencies": {
+    "locus": "^1.2.0"
+  }
+}
