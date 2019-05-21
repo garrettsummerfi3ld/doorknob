@@ -34,9 +34,9 @@ readableStream.on("end", function () {
 // }
 class Switch {
     constructor(switchValues) {
-        this.id = switchValues.id || "doorx";
+        this.id = switchValues.id || "door";
         this.state = switchValues.state || "off";
-        this.name = switchValues.name || "door";
+        this.name = switchValues.name || "doorx";
         this.toggle = function () {
             if (this.state === "on") {
                 this.setState("open");
