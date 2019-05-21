@@ -85,6 +85,7 @@ function saveState() {
         err
     ) {
         if (err) {
+            console.error("ERROR! CHECK STACTRACE!")
             console.error(err);
         } else {
             let date = new Date();
@@ -119,25 +120,32 @@ app.post("/api/switches/:id", function (req, res) {
     // For now, uses a simple password query in the url string.
     // Example: POST to localhost:8000/API/switches/sw1?password=test
     if (req.query.password === process.env.PASS) {
-        var foundSwitch = getSwitch(req.params.id);
-
-        // Optional On / Off command. If not included, defaults to a toggle.
-
-        if (!(req.query.command === "on" || req.query.command === "off")) {
-            foundSwitch.toggle();
-        } else {
-            foundSwitch.setState(req.query.command);
+        try {
+            var foundSwitch = getSwitch(req.params.id);
+            
+            // Optional On / Off command. If not included, defaults to a toggle.
+            if (!(req.query.command === "open" || req.query.command === "close")) {
+                foundSwitch.toggle();
+            } else {
+                foundSwitch.setState(req.query.command);
+            }
+    
+            saveState();
+            console.log("postSwitch " + JSON.stringify(foundSwitch));
+            res.json(foundSwitch);
+            
+        } catch (error) {
+            console.error("ERROR! CHECK STACKTRACE!")
+            console.error(error)
         }
 
-        saveState();
-        console.log("postSwitch " + JSON.stringify(foundSwitch));
-        res.json(foundSwitch);
     } else {
-        console.log("invalid password");
-        res.send("try again");
+        console.log("ERROR! AUTHENTICATION FAILURE");
+        res.send("CHECK AUTHENTICATION METHODS");
     }
 });
 
 app.listen(process.env.PORT, function () {
+    console.log("Doorknob service started!")
     console.log("Listening on port " + process.env.PORT);
 });

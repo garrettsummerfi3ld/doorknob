@@ -6,8 +6,8 @@ Using a Raspberry Pi to control a door, using your voice
 
 * A Raspberry Pi with an internet connection
 * Python3
-* [bottle](https://ogma-dev.github.io/posts/simple-flask-webhook/)
-* [gpiozero](https://gpiozero.readthedocs.io/en/stable/index.html)
+* NodeJS
+* RPi.GPIO
 
 ## Documentation
 
