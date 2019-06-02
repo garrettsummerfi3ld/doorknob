@@ -34,6 +34,8 @@
     "python-shell": "^0.4.0"
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.13.0",
     "locus": "^1.2.0"
   }
 }
