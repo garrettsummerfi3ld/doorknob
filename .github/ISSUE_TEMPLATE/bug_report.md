@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Create a report to help us improve this project
 title: ''
 labels: bug
 assignees: garrettsummerfi3ld
@@ -12,10 +12,6 @@ A clear and concise description of what the bug is.
 
 **To Reproduce**
 Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
@@ -23,10 +19,11 @@ A clear and concise description of what you expected to happen.
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. Ubuntu 18.04.2 LTS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+**Hardware (please complete the following information):**
+
+- OS: [e.g. Ubuntu 18.04.2 LTS]
+- Hardware: [Raspberry Pi 3 B+]
+- Version: [e.g. 0.0.1]
 
 **Additional context**
 Add any other context about the problem here.
