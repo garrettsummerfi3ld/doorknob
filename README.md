@@ -2,12 +2,14 @@
 
 Using a Raspberry Pi to control a door, using your voice
 
+***WORK IN PROGRESS***
+
 ## Requirements
 
 * A Raspberry Pi with an internet connection
 * Python3
 * NodeJS
-* RPi.GPIO
+* gpiozero
 
 ## Documentation
 
@@ -28,4 +30,3 @@ All logging is captured by a file that is created the first time the script runs
 
 ## Troubleshooting
 
-***WORK IN PROGRESS***

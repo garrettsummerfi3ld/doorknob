@@ -1,9 +1,10 @@
 # Edit line 6 to match your chosen GPIO pin
 
-import RPi.GPIO as GPIO
+from gpiozero import Motor, DistanceSensor
 from time import sleep
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(20, GPIO.IN)
-sleep(5)
-GPIO.cleanup()
+
+motor = motor(backward=4)
+sensor = DistanceSensor(23,24, max_distance=1, threshold_distance=0.2)
+
+sensor.when_in_range = motor.backward
+sensor.when_out_of_range = motor.close
