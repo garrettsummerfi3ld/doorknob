@@ -3,7 +3,7 @@
 from gpiozero import Motor, DistanceSensor
 from time import sleep
 
-motor = motor(forward=4)
+motor = Motor(forward=4)
 sensor = DistanceSensor(23,24, max_distance=1, threshold_distance=0.2)
 
 sensor.when_in_range = motor.forward

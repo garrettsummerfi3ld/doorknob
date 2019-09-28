@@ -15,18 +15,17 @@ Using a Raspberry Pi to control a door, using your voice
 
 ### Set up
 
-1. Clone repository into `/home` folder
-2. On Linux / macOS: Run `chmod +x doorknob.py` in the directory
-3. `./doorknob.py` or `python3 doorknob.py`
+1. Clone repository
+2. Create a `.env` file with a port to communicate over
+3. `$ node app.js`
 
 ### Updating
 
-1. Change directory into project directory
-2. `git pull`
+1. Open repo in the terminal
+2. `$ git pull`
 
-### Logging
+## FAQ
 
-All logging is captured by a file that is created the first time the script runs. This file is located in the project directory. File that is created is `doorknob.log`
+Q: It doesn't work!
 
-## Troubleshooting
-
+A: Send in an issue
