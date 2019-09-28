@@ -148,3 +148,6 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+# VScode
+.vscode/

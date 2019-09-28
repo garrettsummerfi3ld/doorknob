@@ -169,5 +169,9 @@ app.post('/api/switches/:id', function(req, res) {
 
 app.listen(process.env.PORT, function() {
   console.log('Doorknob service started!');
+  if (process.env.PORT === undefined) {
+    console.error('No port defined! Is there a "PORT" property specifying the port in your ".env"?')
+    process.exit(1);
+  }
   console.log('Listening on port ' + process.env.PORT);
 });
