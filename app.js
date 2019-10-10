@@ -41,7 +41,7 @@ class Switch {
   constructor(switchValues) {
     this.id = switchValues.id || 'door';
     this.state = switchValues.state || 'off';
-    this.name = switchValues.name || 'doorx';
+    this.name = switchValues.name || 'doorknob';
     this.toggle = function() {
       if (this.state === 'on') {
         this.setState('open');
@@ -54,6 +54,7 @@ class Switch {
       PythonShell.run(str, function(err) {
         if (!process.env.DEV) {
           if (err) {
+            console.err('SOMETHING REALLY MESSED UP');
             throw err;
           }
         }
@@ -66,7 +67,7 @@ class Switch {
 }
 
 /**
- * Python script that causes  a door to open
+ * Python script that causes a door to open
  * @param {number} number
  * @return {void} door open function
  */
@@ -170,7 +171,8 @@ app.post('/api/switches/:id', function(req, res) {
 app.listen(process.env.PORT, function() {
   console.log('Doorknob service started!');
   if (process.env.PORT === undefined) {
-    console.error('No port defined! Is there a "PORT" property specifying the port in your ".env"?')
+    console.error('No port defined! Is there a "PORT" property specifying the port in your ".env"?');
+    console.log('Exiting...');
     process.exit(1);
   }
   console.log('Listening on port ' + process.env.PORT);
