@@ -26,16 +26,16 @@
   },
   "homepage": "https://github.com/garrettsummerfi3ld/doorknob#readme",
   "dependencies": {
-    "body-parser": "^1.16.0",
-    "dotenv": "^4.0.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "path": "^0.12.7",
-    "python-shell": "^0.4.0"
+    "python-shell": "^2.0.1"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-google": "^0.13.0",
-    "locus": "^1.2.0"
+    "eslint": "^7.7.0",
+    "eslint-config-google": "^0.14.0",
+    "locus": "^2.0.4"
   }
 }
