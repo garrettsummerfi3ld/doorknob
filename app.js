@@ -1,10 +1,10 @@
 require('dotenv').config();
 
-const PythonShell = require('python-shell');
-const fs = require('fs');
-const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
+let {PythonShell} = require('python-shell')
+let fs = require('fs');
+let express = require('express');
+let bodyParser = require('body-parser');
+let app = express();
 
 // Switch states held in memory
 const switches = [];
